@@ -1,0 +1,15 @@
+.button {
+  border-radius: 10px;
+  background-color: #333;
+  outline: none;
+  border: none;
+}
+.light-grey {
+  background-color: #999;
+}
+.orange {
+  background-color: rgb(255, 174, 0);
+}
+.long {
+  width: 100px;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "../button.css";
 class Button extends Component {
   state = {
     value: this.props.value
@@ -13,10 +13,10 @@ class Button extends Component {
   }
   getButtonClasses() {
     let classes = "button ";
-    if (isNumeric(this.state.value)) {
+    if (Number.isInteger(this.state.value)) {
       classes += "number";
       if (this.state.value == 0) {
-        classes += " 0";
+        classes += " long";
       }
     } else {
       if (this.state.value == "AC" || "%" || "+/-") {
@@ -25,5 +25,8 @@ class Button extends Component {
         classes += "light-grey";
       }
     }
+    return classes;
   }
 }
+
+export default Button;
