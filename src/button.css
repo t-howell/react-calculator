@@ -3,6 +3,7 @@
   background-color: #333;
   outline: none;
   border: none;
+  height: 100px;
 }
 .light-grey {
   background-color: #999;
@@ -11,5 +12,11 @@
   background-color: rgb(255, 174, 0);
 }
 .long {
-  width: 100px;
+  width: 200%;
+}
+.number {
+  color: #fff;
+}
+.hidden {
+  visibility: hidden;
 }

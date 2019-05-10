@@ -1,28 +1,45 @@
 import React, { Component } from "react";
 import "../button.css";
+
 class Button extends Component {
-  state = {
-    value: this.props.value
-  };
+  //   state = {
+  //     value: []
+  //   };
+  //   getButtonValue = () => {
+  //     this.setState({ value: this.state });
+  //   };
   render() {
+    // console.log(this.state.value);
     return (
-      <button className={this.getButtonClasses()} key={this.state.value}>
-        {this.state.value}
+      <button
+        className={this.getButtonClasses()}
+        onClick={() => this.handleButtonClick()}
+      >
+        {this.props.children}
       </button>
     );
+    // return <button className={this.getButtonClasses()} />;
   }
   getButtonClasses() {
     let classes = "button ";
-    if (Number.isInteger(this.state.value)) {
+    if (!isNaN(this.props.button.value) || this.props.button.value === ".") {
       classes += "number";
-      if (this.state.value == 0) {
+      if (this.props.button.value === "0") {
         classes += " long";
       }
+      if (this.props.button.value == null) {
+        classes += " hidden";
+      }
     } else {
-      if (this.state.value == "AC" || "%" || "+/-") {
-        classes += "orange";
-      } else {
+      console.log(this.props.button.id);
+      if (
+        this.props.button.id === "c" ||
+        this.props.button.value === "%" ||
+        this.props.button.value === "+/-"
+      ) {
         classes += "light-grey";
+      } else {
+        classes += "orange";
       }
     }
     return classes;
